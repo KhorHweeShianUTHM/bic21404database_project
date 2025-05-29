@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AHK Auto Care</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="profile_styles.css" />
+  <link rel="stylesheet" href="sidenavbar_styles.css" />
+
+</head>
+<body>
+  <div class="sidebar">
+    <img src="ahk_logo.png"/>
+    <h2>Admin Menu</h2>
+    <ul class="menu-top">
+      <li><i class="fas fa-home"></i> Dashboard</li>
+      <li style="margin-left: 2px;"><i class="fas fa-toolbox" style="margin-right: 12px;"></i> Inventory</li>
+      <li><a href="customer.php"><i class="fas fa-users"></i>Customers</a></li>
+      <li style="margin-left: 3px;"><i class="fas fa-file-alt" style="margin-right: 12px;"></i> Job Cards</li>
+      <li><i class="fas fa-credit-card"></i> Payment</li>
+      <li><i class="fas fa-chart-line"></i> Analytics</li>
+      <li><i class="fas fa-boxes"></i> Suppliers</li>
+      <li><i class="fas fa-cog"></i> Settings</li>
+    </ul>
+    <ul class="menu-bottom">
+      <li><i class="fas fa-sign-out-alt"></i> Sign Out</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="navbar">
+      <div class="page-info">
+        <h1>Profile Details and Settings</h1>
+        <p>Manage your account information and preferences</p>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <div class="notification-icon">
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="user-profile-container" style="position: relative;">
+          <div class="user-info" style="cursor:pointer;">
+            <div class="user-label">
+              <span class="user-name">Boss</span>
+              <span class="user-role">Admin</span>
+            </div>
+            <div class="user-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <span class="dropdown-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <ul class="profile-dropdown-menu" hidden>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content-container">
+        
+
+        <main>
+            <div class="tabs-container">
+                <button id="profileDetailsTab" class="tab-button">
+                    Profile Details
+                </button>
+                <button id="securityTab" class="tab-button">
+                    Security
+                </button>
+            </div>
+
+            <div id="profileDetailsContent" class="content-card">
+                <div class="profile-header-flex">
+                    <div class="profile-avatar-group"> 
+                        <img id="profileAvatar" src="https://placehold.co/120x120/E2E8F0/4A5568?text=Avatar" alt="Profile Avatar">
+                        <div class="avatar-actions">
+                             <button id="uploadImageBtn" class="custom-button hidden"><i class="fas fa-upload"></i>Upload Image</button>
+                             <button id="removePhotoBtn" class="custom-button hidden"><i class="fas fa-trash-alt"></i>Remove Photo</button>
+                        </div>
+                    </div>
+                    <div class="profile-main-actions">
+                        <button id="editBtn" class="custom-button"><i class="fas fa-edit"></i>Edit Profile</button>
+                    </div>
+                </div>
+
+                <div class="form-fields-container">
+                    <div class="form-group">
+                        <label for="fullName" class="input-label">Full Name</label>
+                        <input type="text" id="fullName" value="Mel Peters" placeholder="Enter your full name" class="profile-input" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="input-label">Email</label>
+                        <input type="email" id="email" value="melpeters@example.com" placeholder="Enter your email address" class="profile-input" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="input-label">Title</label>
+                        <input type="text" id="title" value="Boss" placeholder="Enter your title" class="profile-input" readonly>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button id="cancelBtn" class="custom-button hidden"><i class="fas fa-times"></i>Cancel</button>
+                    <button id="saveChangeBtn" class="custom-button hidden"><i class="fas fa-save"></i>Save Changes</button>
+                </div>
+            </div>
+
+            <div id="securityContent" class="content-card hidden">
+                <h2>Security Settings</h2>
+                <p>Manage your password and security preferences.</p>
+                <div class="form-fields-container">
+                    <div class="form-group">
+                        <label for="currentPassword" class="input-label">Current Password</label>
+                        <input type="password" id="currentPassword" placeholder="Enter current password" class="profile-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword" class="input-label">New Password</label>
+                        <input type="password" id="newPassword" placeholder="Enter new password" class="profile-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword" class="input-label">Confirm New Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm new password" class="profile-input">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="custom-button password-update-button"><i class="fas fa-key"></i>Update Password</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+  </div>
+
+    <script src="sidenavbar_script.js"></script>
+    <script src="profile_script.js"></script>
+
+</body>
+</html>
